@@ -50,6 +50,6 @@ http.createServer(function (request, response) {
         }
     });
 
-}).listen(9000);
+}).listen(process.env.PORT || 9000);
 console.log('Server running at http://127.0.0.1:9000/');
 
