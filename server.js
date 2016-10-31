@@ -7,12 +7,17 @@ var path = require('path');
 // console.log('io ' + io.on);
 
 http.createServer(function (req, res) {
+
+	var filePath = '.' + request.url;
+    if (filePath == './')
+    filePath = './index.html';
     
-	fs.readFile('index.html',function (err, data){
+	fs.readFile(filePath,function (err, data){
 	res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
 	res.write(data);
 	res.end();
-    });	
+	
+});	
    
 
 
